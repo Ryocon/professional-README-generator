@@ -2,7 +2,7 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license != 'None') {
-    return '<img src=https://img.shields.io/badge/License-${license}-orange.svg>'
+    return '<img src=https://img.shields.io/badge/License- ${license} -orange.svg>'
   } else {
     return ''
   }
@@ -24,7 +24,7 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license != 'None') {
-    return `This project uses the ${data.license} license.`
+    return `This project uses the ${license} license.`
   } else {
     return 'No license is used for this project'
   }
