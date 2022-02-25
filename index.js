@@ -1,21 +1,36 @@
-// TODO: Include packages needed for this application
+// packages that are required for this application to run correctly
 const inquirer = require('inquirer')
 
 const fs = require('fs')
 
+// link to generateMarkdown.js which is exported from its own file
 const generateMarkdown = require('./utils/generateMarkdown')
 
-// TODO: Create an array of questions for user input
+// an array of questions for the user to provide input data for the readme to generate from
 const questions = [
     {
         type: 'input',
         message: 'What is the title of your project?',
-        name: 'title'
+        name: 'title',
+        validate: (input) => {
+            if (!input) {
+                return 'Please provide a project title'
+            } else {
+                return true
+            }
+        }
     },
     {
         type: 'input',
         message: 'Please add a description of your project',
-        name: 'description'
+        name: 'description',
+        validate: (input) => {
+            if (!input) {
+                return 'Please provide a description for your project'
+            } else {
+                return true
+            }
+        }
     },
     {
         type: 'input',
@@ -38,6 +53,7 @@ const questions = [
         name: 'tests'
     },
     {
+        // use of a list for the user to select a license from the licenses listed on github docs
         type: 'list',
         message: 'Please choose a license for your project',
         name: 'license',
@@ -80,15 +96,29 @@ const questions = [
         ]
     },
     {
-        // added to Questions section
+        // these inputs are added to the Questions section
         type: 'input',
         message: 'Please provide your Github username', 
-        name: 'github'
+        name: 'github',
+        validate: (input) => {
+            if (!input) {
+                return 'Please provide a username'
+            } else {
+                return true
+            }
+        }
     },
     {
         type: 'input',
         message: 'Please provide your email address',
-        name: 'email'
+        name: 'email',
+        validate: (input) => {
+            if (!input) {
+                return 'Please provide an email address'
+            } else {
+                return true
+            }
+        }
     },
 ];
 

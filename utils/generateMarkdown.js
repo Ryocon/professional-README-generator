@@ -53,7 +53,7 @@ function generateMarkdown(data) {
   ${data.description}
 
   ## Installation
-  ${data.insallation}
+  ${data.installation}
 
   ## Usage
   ${data.usage}
