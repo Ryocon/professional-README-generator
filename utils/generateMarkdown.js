@@ -1,5 +1,6 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// function that returns a license badge based on which license is passed in
+// If there is no license, returns an empty string
+// the function generates a badge from the list and uses the split and join method to remove spaces and add underscores in order for the badge to generate correctly
 function renderLicenseBadge(license) {
   if (license != 'None') {
     console.log(license)
@@ -10,8 +11,9 @@ function renderLicenseBadge(license) {
 
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// function that returns the license link
+// If there is no license, returns an empty string
+// generates the output in best practice markdown
 function renderLicenseLink(license) {
   if (license != 'None') {
     return `- [License](#license)`
@@ -21,8 +23,8 @@ function renderLicenseLink(license) {
 
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// function that returns the license section of README
+// If there is no license, returns an empty string
 function renderLicenseSection(license) {
   if (license != 'None') {
     return `This project uses the ${license} license.`
@@ -31,14 +33,14 @@ function renderLicenseSection(license) {
   }
 }
 
-// TODO: Create a function to generate markdown for README
+// function to generate markdown for README
+// populated from the data gathered in inquirer and written to the readme file generated using fs in index.js
 function generateMarkdown(data) {
   return `
 
   # ${data.title}
 
   ${renderLicenseBadge(data.license)}
-
 
   ## Table of Contents
   - [Description](#description)

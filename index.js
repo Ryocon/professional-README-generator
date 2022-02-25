@@ -7,6 +7,7 @@ const fs = require('fs')
 const generateMarkdown = require('./utils/generateMarkdown')
 
 // an array of questions for the user to provide input data for the readme to generate from
+// validation added to questions that are essential for the readme
 const questions = [
     {
         type: 'input',
@@ -120,14 +121,15 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write README file
+// function to write README file
 function writeToFile(fileName, data) {
     // ? ternary operator used instead of if else statement
     fs.writeFile(fileName, generateMarkdown(data), (err) => (err ? console.log(err) : console.log('File Written!')))
 
 }
 
-// TODO: Create a function to initialize app
+// function to initialize app
+// names the file and sets the filetype to be parsed into writeToFile
 function init() {
     inquirer.prompt(questions).then((answers) => {
         console.log(answers)
@@ -136,5 +138,5 @@ function init() {
     })
 }
 
-// Function call to initialize app
+// function call to initialize app
 init();
