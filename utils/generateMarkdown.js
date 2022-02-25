@@ -1,8 +1,8 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license !== 'None') {
-    return '<img src=https://img.shields.io/badge/License-${License}-orange.svg>'
+  if (license != 'None') {
+    return '<img src=https://img.shields.io/badge/License-${license}-orange.svg>'
   } else {
     return ''
   }
@@ -12,7 +12,7 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license !== 'None') {
+  if (license != 'None') {
     return `- [License](#license)`
   } else {
     return ''
@@ -22,7 +22,13 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (license != 'None') {
+    return `This project uses the ${license} license.`
+  } else {
+    return 'No license is used for this project'
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -40,7 +46,7 @@ function generateMarkdown(data) {
   - [Credits](#credits)
   - [Tests](#tests)
   - [Questions](#questions)
-  ${renderLicenseLink.license}
+  ${renderLicenseLink(data.license)}
 
   ## Description
   ${data.description}
@@ -53,7 +59,7 @@ function generateMarkdown(data) {
 
   ## License
 
-  This project uses the ${data.license} license.
+  ${renderLicenseSection(data.license)}
 
   ## Credits
   ${data.credits}
