@@ -3,7 +3,7 @@
 function renderLicenseBadge(license) {
   if (license != 'None') {
     console.log(license)
-    return `<img src=https://img.shields.io/badge/License-${license}-orange.svg>`
+    return `<img src=https://img.shields.io/badge/License-${license.split(' ').join('_')}-orange.svg>`
   } else {
     return ''
   }
