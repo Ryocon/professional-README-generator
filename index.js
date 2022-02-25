@@ -33,6 +33,11 @@ const questions = [
         name: 'credits'
     },
     {
+        type: 'input',
+        message: 'Please provide testing information for this project',
+        name: 'tests'
+    },
+    {
         type: 'list',
         message: 'Please choose a license for your project',
         name: 'license',
@@ -70,7 +75,8 @@ const questions = [
             'SIL Open Font License 1.1',
             'University of Illinois/NCSA Open Source License',
             'The Unlicense',
-            'zLib License'
+            'zLib License',
+            'None'
         ]
     },
     {
@@ -87,7 +93,11 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    // ? ternary operator used instead of if else statement
+    fs.writeFile(fileName, generateMarkdown(data), (err) => (err ? console.log(err) : console.log('File Written!')))
+
+}
 
 // TODO: Create a function to initialize app
 function init() {
