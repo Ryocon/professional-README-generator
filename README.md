@@ -22,9 +22,7 @@
   ## Usage
   A video demonstration on how to use this project is provided below:
   
-  <video>
-  <source src="https://drive.google.com/file/d/1r2LzYbLBviWwN1B8Frhtztnr_Eg2BRJU/view?usp=sharing" type="video/mp4">
-  </video>
+  https://user-images.githubusercontent.com/54818132/155839996-0fa4edaf-5fe5-49e0-b602-81659cb9367a.mp4
 
   ## License
 
